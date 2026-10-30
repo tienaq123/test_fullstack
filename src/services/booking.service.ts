@@ -1,6 +1,7 @@
 import { bookings, nextBookingId, tickets } from "../data/store";
 import { AppError } from "../errors";
 import type { Booking } from "../types";
+import { calculateDiscount } from "./discount";
 
 // Must stay synchronous: check stock and decrement in the same tick so concurrent requests can't oversell.
 export function createBooking(ticketId: number, quantity: number): Booking {
@@ -25,12 +26,17 @@ export function createBooking(ticketId: number, quantity: number): Booking {
   ticket.stock -= quantity;
 
   // Price always comes from the server-side ticket, never from the client.
+  const totalAmount = ticket.price * quantity;
+  const discountAmount = calculateDiscount(totalAmount);
+
   const booking: Booking = {
     id: nextBookingId(),
     ticketId: ticket.id,
     quantity,
     unitPrice: ticket.price,
-    totalAmount: ticket.price * quantity,
+    totalAmount,
+    discountAmount,
+    finalAmount: totalAmount - discountAmount,
     status: "CONFIRMED",
     createdAt: new Date(),
   };

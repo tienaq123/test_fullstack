@@ -12,7 +12,9 @@ export interface Booking {
   ticketId: number;
   quantity: number;
   unitPrice: number; // price snapshot at purchase time
-  totalAmount: number;
+  totalAmount: number; // before discount
+  discountAmount: number;
+  finalAmount: number; // amount to pay
   status: BookingStatus;
   createdAt: Date;
 }

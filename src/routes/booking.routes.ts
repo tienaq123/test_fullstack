@@ -25,6 +25,8 @@ bookingRouter.post("/", (req, res) => {
   res.status(201).json({
     bookingId: booking.id,
     totalAmount: booking.totalAmount,
+    discountAmount: booking.discountAmount,
+    finalAmount: booking.finalAmount,
     status: booking.status,
   });
 });
