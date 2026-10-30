@@ -153,6 +153,7 @@ Tôi dùng Claude Code để lập kế hoạch theo phase và sinh phần lớn
 | Booking service | Sinh code | Chạy thử từng kịch bản, đối chiếu tiền, mã đơn, tồn kho sau mỗi lần gọi |
 | Route, validate, error handler | Sinh code | Chốt tự validate thay vì dùng zod, chốt mã 409 cho hết vé. Gọi curl đủ 15 case |
 | Giảm giá | Sinh code và unit test | Chốt ý nghĩa `totalAmount`, làm tròn xuống, test biên bằng unit test |
+| Trang test UI (`public/index.html`) | Viết toàn bộ (HTML + JS thuần) | Chỉ là công cụ test thay Postman, không thuộc phạm vi đề. Kiểm tra trang được phục vụ đúng và API không bị ảnh hưởng |
 | Tài liệu này | Soạn nội dung | Đối chiếu với kết quả chạy thật |
 
 ### Lỗi phát hiện trong quá trình kiểm chứng

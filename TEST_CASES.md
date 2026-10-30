@@ -10,6 +10,8 @@ npm run dev     # http://localhost:3000
 npm test        # unit test cho phần tính giảm giá
 ```
 
+**Không có Postman?** Mở http://localhost:3000. Trang test có sẵn nút cho từng case bên dưới và nút bắn request song song ([public/index.html](public/index.html)).
+
 ```bash
 curl -s -X POST http://localhost:3000/api/bookings \
   -H 'Content-Type: application/json' \
